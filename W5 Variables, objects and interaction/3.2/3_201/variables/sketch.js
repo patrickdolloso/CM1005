@@ -21,7 +21,7 @@ function draw()
     //sun
     noStroke();
     fill(255,150,0);
-    ellipse(430,150,100,100);
+    ellipse(430,50,100,100);
     
     //tree
     stroke(0);
