@@ -1,6 +1,6 @@
 
 var r;
-var x;
+var x = 42;
 var y;
 
 function setup() 
@@ -10,9 +10,7 @@ function setup()
     
     r = random();
     
-    console.log(random(100,1000));
-    
-    x = 0;
+    console.log("value" + x);
     
 }
 
