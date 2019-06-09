@@ -3,7 +3,7 @@ The case of the slippery Minsky brothers
 Stage 1: Gates Bank
 
 Officer: 1382801
-CaseNum: 302-0-63019495-1382801
+CaseNum: 302-0-78690143-1382801
 
 The Slippery Minsky brothers are notorious cat burglars.
 I’ve been trying to catch them for years but they are masters of escape, hence their nickname.
@@ -26,8 +26,8 @@ Head down there and catch him in the act.
 */
 
 // edit the variables below to change where the spotlight starts and finishes
-var startX;
-var endX;
+var startX = 540;
+var endX = 817;
 
 // other variables, you don't need to change these
 var img, spotlight_image;
@@ -46,6 +46,8 @@ function setup()
 	createCanvas(img.width, img.height);
 
 	//Initialize x with the start value
+	x = 540;
+	
 }
 
 function draw()
@@ -53,6 +55,7 @@ function draw()
 	image(img, 0, 0);
 
 	// alter the variable x below to animate the spotlight
+	x +=1;
 
 
 	////////// DO NOT CHANGE ANYTHING BELOW /////////////
