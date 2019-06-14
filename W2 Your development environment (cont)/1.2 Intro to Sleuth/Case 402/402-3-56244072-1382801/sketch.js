@@ -60,6 +60,19 @@ function draw()
 // South: detSpeedX = 0 and detSpeedY = 1
 // West: detSpeedX = -1 and detSpeedY = 0
 
+	if(det.locationY > 322) {
+		//east
+		det.speedX = 1;
+		det.speedY = 0;
+	}
+
+	if(det.locationX > 255) {
+		//north
+		det.speedX = 0;
+		det.speedY = -1;
+	}
+
+
 
 
 
