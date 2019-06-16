@@ -1,15 +1,15 @@
 /*
 
 Officer: 1382801
-CaseNum: 403-0-66716401-1382801
+CaseNum: 403-0-46275281-1382801
 
 Case 403 - Surveillance - stage 1
 
 We are on the lookout for the criminal mastermind known as Shiffman.
-Our sources tell us that they are currently heading north on Huffman Street.
-I need you to sound the alarm if he crosses Ada Avenue.
+Our sources tell us that they are currently heading south on Crowther Road.
+I need you to sound the alarm if he crosses Reynolds Street.
 
-Shiffman's position is signified by the mouse. To sound the alarm - draw a red rectangle covering the entire map from Ada Avenue to the north.
+Shiffman's position is signified by the mouse. To sound the alarm - draw a blue rectangle covering the entire map from Reynolds Street to the south.
 
 Note: all road coordinates are measured from their center.
 
@@ -41,6 +41,11 @@ function draw()
     image(img,0,0);
 
     //Write your code below here ...
+    if(mouseY > 441) {
+      console.log("Shiffman is south");
+      fill(0,0,255);
+      rect(0,441,2367,img.height - 441);
+    }
 
 
 
