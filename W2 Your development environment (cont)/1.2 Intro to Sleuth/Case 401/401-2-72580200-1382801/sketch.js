@@ -112,7 +112,7 @@ function draw()
 	//Write conditional statements to change the amount of each substance ...
 
 	// - When NerveGas goes above 0.33, whilst at the same time, snake_venom goes above 0.7 or amanitaMushrooms dips below 0.52, decrease methylene by 0.05
-	if(NerveGas > 0.33 && snake_venom > 0.7 || amanitaMushrooms < 0.52) {
+	if((NerveGas > 0.33 && snake_venom > 0.7) || amanitaMushrooms < 0.52) {
 		methylene -= 0.05;
 	}
 	
@@ -135,7 +135,7 @@ function draw()
 
 	// - When amanitaMushrooms dips below 0.35 or lead goes above 0.66, whilst at the same time, snake_venom goes above 0.33, decrease sodiumBicarbonate by 0.02
 
-	if(amanitaMushrooms < 0.35 || lead > 0.66 && snake_venom > 0.33) {
+	if(amanitaMushrooms < 0.35 || (lead > 0.66 && snake_venom > 0.33)) {
 		sodiumBicarbonate -= 0.02;
 	}
 
@@ -147,13 +147,13 @@ function draw()
 
 	// - If NerveGas goes above 0.32, whilst at the same time, amanitaMushrooms goes above 0.6 or strychnine dips below 0.69, decrement insulin by 0.05
 
-	if(NerveGas > 0.32 && amanitaMushrooms > 0.6||strychnine < 0.69) {
+	if((NerveGas > 0.32 && amanitaMushrooms > 0.6)||strychnine < 0.69) {
 		insulin -= 0.05;
 	}
 
 	// - When lead goes above 0.56 or insecticide dips below 0.61, whilst at the same time, snake_venom goes above 0.47, raise insulin by 0.02
 
-	if(lead > 0.56 || insecticide < 0.61 && snake_venom > 0.47) {
+	if(lead > 0.56 || (insecticide < 0.61 && snake_venom > 0.47)) {
 		insulin += 0.02;
 	}
 

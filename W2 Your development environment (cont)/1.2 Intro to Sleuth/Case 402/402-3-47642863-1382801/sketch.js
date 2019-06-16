@@ -3,7 +3,7 @@
 Stage 4 - Fox
 
 Officer: 1382801
-CaseNum: 402-3-56244072-1382801
+CaseNum: 402-3-47642863-1382801
 
 This final Why gang member Fox is the boss of the gang. Fox is particularly
 cunning and has hidden herself down this twisted network of alleys known as
@@ -27,8 +27,8 @@ var overlayImage;
 var det = {
 	"speedX": 0,
 	"speedY": 0,
-	"locationX": 73,
-	"locationY": 73,
+	"locationX": 763,
+	"locationY": 10,
 	"image": "./det.png"
 };
 
@@ -49,32 +49,41 @@ function draw()
 {
 
 	///////////////////ADD YOUR CODE HERE///////////////////
-	if (det.locationY < 322)
+	if (det.locationY < 135)
 	{
 		det.speedX = 0;
 		det.speedY = 1;
 	}
 
-// 	North: detSpeedX = 0 and detSpeedY = -1
-// East: detSpeedX = 1 and detSpeedY  = 0
-// South: detSpeedX = 0 and detSpeedY = 1
-// West: detSpeedX = -1 and detSpeedY = 0
+	// North: detSpeedX = 0 and detSpeedY = -1
+	// East: detSpeedX = 1 and detSpeedY  = 0
+	// South: detSpeedX = 0 and detSpeedY = 1
+	// West: detSpeedX = -1 and detSpeedY = 0
 
-	if(det.locationY > 322) {
-		//east
-		det.speedX = 1;
-		det.speedY = 0;
+	if(det.locationY > 135) {
+		det.speedX = -1;
+		det.speedY = 0;		
 	}
 
-	if(det.locationX > 255) {
-		//north
+	if(det.locationX < 385) {
 		det.speedX = 0;
-		det.speedY = -1;
+		det.speedY = 1;		
 	}
 
+	if(det.locationY > 197) {
+		det.speedX = 1;
+		det.speedY = 0;		
+	}
 
+	if(det.locationX > 698 && det.locationY > 197) {
+		det.speedX = 0;
+		det.speedY = 1;			
+	}
 
-
+	if(det.locationY > 334  && det.speedX > 698) {
+		det.speedX = -1;
+		det.speedY = 0;	
+	}
 
 	///////////////DO NOT CHANGE CODE BELOW THIS POINT///////////////////
 
@@ -152,6 +161,6 @@ var perp = {
 	"caught": 0,
 	"name": "Fox",
 	"image": "./perp.png",
-	"locationX": 889,
-	"locationY": 135
+	"locationX": 701,
+	"locationY": 696
 };
