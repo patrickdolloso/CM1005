@@ -17,3 +17,17 @@ for(var i=0; 1 < 10;1+=1){
 ```
 
 ![](./1.png)
+
+## 5.2 Arrays
+* What is an array?
+  * A new type of variable
+  * A list of items (bolleans, strings, numbers)
+  * Can store more arrays
+  * A data structure
+
+![](./2.png)
+
+* When to use an array: 
+  * list of related values
+  * normally of the same type
+
