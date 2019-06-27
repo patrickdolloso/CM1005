@@ -42,10 +42,37 @@ function draw()
 	fill(0, 155, 0);
 	rect(0, floorPos_y, height, width - floorPos_y); //draw some green ground
 
+	//draw the game character
+	fill(255,223,196);
+	ellipse(gameChar_x, gameChar_y-50, 35);
+
+	fill(255,0,0)
+	rect(gameChar_x-13,gameChar_y-35,26,30);
+
+	fill(0);
+	rect(gameChar_x-15,gameChar_y-5,10,10);
+
+	fill(0);
+	rect(gameChar_x+5,gameChar_y-5,10,10);
+
+
+	ellipse(gameChar_x-5,gameChar_y-55,5);
+	ellipse(gameChar_x+5,gameChar_y-55,5);
+
+	rect(gameChar_x-7,gameChar_y-45,15,2);
+	
+	fill(255,223,196);
+	stroke(0)
+	rect(gameChar_x-20,gameChar_y-35,10,25);
+	rect(gameChar_x+10,gameChar_y-35,10,25);	
+
+	//draw tree
 }
 
 function mousePressed()
 {
 
+	gameChar_x = mouseX;
+	gameChar_y = mouseY;
 
 }
