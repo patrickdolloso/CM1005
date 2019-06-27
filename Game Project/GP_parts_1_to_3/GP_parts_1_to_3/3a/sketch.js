@@ -13,6 +13,11 @@ var gameChar_x;
 var gameChar_y;
 var floorPos_y;
 
+var isLeft;
+var isRight;
+var isPlummeting;
+var isFalling;
+
 
 function setup()
 {
