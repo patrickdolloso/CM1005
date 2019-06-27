@@ -32,6 +32,19 @@ function setup()
 
 	treePos_x = width/2;
 	treePos_y = height/2;
+
+	//set canyon position & width
+	canyon = {x_pos: 20,	width: 200};
+
+	//set collectible item
+	collectable = {x_pos: 100, y_pos: 100, size: 50};
+
+    // set mountain position and size
+    mountain = {x_pos: 250, y_pos: floorPos_y, width: 225, height: 300, offset: 70};
+    
+    // set cloud position and size
+    cloud = {x_pos: 720, y_pos: 120, size: 250};
+
 }
 
 function draw()
@@ -41,6 +54,45 @@ function draw()
 	noStroke();
 	fill(0, 155, 0);
 	rect(0, floorPos_y, height, width - floorPos_y); //draw some green ground
+
+	//draw cloud
+	noStroke();
+    fill(255,255,255);
+    ellipse(cloud.x_pos,cloud.y_pos,cloud.size,cloud.size/4);
+    ellipse(cloud.x_pos+50,cloud.y_pos+20,cloud.size,cloud.size/4);
+    ellipse(cloud.x_pos+100,cloud.y_pos-10,cloud.size,cloud.size/4);
+
+
+    //draw mountain
+    fill(180, 180, 180);
+    stroke(255, 255, 255);
+    strokeWeight(3);
+    triangle(mountain.x_pos, mountain.y_pos ,mountain.x_pos + mountain.width, 
+             mountain.y_pos, mountain.x_pos + mountain.width/2, mountain.y_pos - mountain.height);
+    triangle(mountain.x_pos + mountain.offset, mountain.y_pos, mountain.x_pos + mountain.offset + mountain.width,
+             mountain.y_pos, mountain.x_pos + mountain.offset + mountain.width/2, mountain.y_pos - mountain.height);
+    
+
+	//draw tree
+	stroke(0);
+	fill(106, 83, 47);
+	rect(treePos_x,treePos_y+90,20,55);
+	fill(85,107,47)
+	triangle(treePos_x+10,treePos_y,treePos_x-40,treePos_y+100,treePos_x+60,treePos_y+100);
+
+	//draw canyon
+	noStroke();
+	fill(100,155,255);
+	rect(canyon.x_pos,432,canyon.width,144);
+	fill(50,50,50,100);
+	rect(canyon.x_pos,462,canyon.width,114);
+
+	//draw collectible item: coin
+	fill(0);
+	ellipse(collectable.x_pos,collectable.y_pos,collectable.size);
+	fill(255,255,0);
+	ellipse(collectable.x_pos,collectable.y_pos,collectable.size-10);	
+
 
 	//draw the game character
 	fill(255,223,196);
@@ -65,8 +117,6 @@ function draw()
 	stroke(0)
 	rect(gameChar_x-20,gameChar_y-35,10,25);
 	rect(gameChar_x+10,gameChar_y-35,10,25);	
-
-	//draw tree
 }
 
 function mousePressed()
