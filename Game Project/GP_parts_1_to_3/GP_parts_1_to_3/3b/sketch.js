@@ -13,11 +13,14 @@ var gameChar_x;
 var gameChar_y;
 var floorPos_y;
 
+
 var isLeft;
 var isRight;
 var isPlummeting;
 var isFalling;
 
+var canyon;
+var collectable;
 
 function setup()
 {
@@ -25,6 +28,15 @@ function setup()
 	floorPos_y = height * 3/4;
 	gameChar_x = width/2;
 	gameChar_y = floorPos_y;
+	//set collectible item
+	collectable = {x_pos: 100, y_pos: floorPos_y, size: 50, isFound: false};
+
+	//set canyon
+	canyon= {
+		x_pos:230,
+		y_pos:height*3/4,
+		width:100
+	}
 }
 
 function draw()
@@ -40,6 +52,28 @@ function draw()
 	rect(0, floorPos_y, width, height - floorPos_y); //draw some green ground
 
 	//draw the canyon
+	noStroke();
+	fill(100,155,255);
+	rect(canyon.x_pos,432,canyon.width,144);
+	fill(50,50,50,100);
+	rect(canyon.x_pos,462,canyon.width,114);
+
+
+	//draw collectable
+	if(dist(gameChar_x, gameChar_y, collectable.x_pos, collectable.y_pos) < 20){
+		collectable.isFound = true;
+	};
+	
+	if(collectable.isFound==false){
+		fill(0);
+		ellipse(collectable.x_pos,collectable.y_pos-20,collectable.size);
+		fill(255,255,0);
+		ellipse(collectable.x_pos,collectable.y_pos-20,collectable.size-10);	
+	};
+
+
+
+
 
 
 	//the game character
@@ -211,6 +245,20 @@ function draw()
 	else {
 		gameChar_y < floorPos_y;
 		isFalling = false;
+	}
+
+	//canyon
+	if (gameChar_x > canyon.x_pos && gameChar_x < canyon.x_pos + canyon.width && gameChar_y == floorPos_y) {
+		isPlummeting = true;
+	}
+
+	else if (gameChar_y < floorPos_y) {
+		isPlummeting = false;
+	}
+
+	if(isPlummeting == true) {
+		gameChar_y += 5,
+		gameChar_x = max(canyon.x_pos,canyon.x_pos + canyon.width/2);
 	}
 
 }
