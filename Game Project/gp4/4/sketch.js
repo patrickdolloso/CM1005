@@ -1,4 +1,5 @@
-/*
+/* Patrick Dolloso
+CM1015 Introduction to Programming I
 
 The Game Project 4 - Side scrolling
 
@@ -108,13 +109,16 @@ function setup()
 	];
 
 	//mountains
-	mountain = {x_pos: 550, y_pos: floorPos_y, width: 225, height: 300, offset: 70};
+	mountain = [
+		{x_pos: 550, y_pos: floorPos_y, width: 225, height: 300, offset: 70},
+		{x_pos: 1650, y_pos: floorPos_y, width: 205, height: 360, offset: 100}
+	];
 
 	//canyon
 	canyon = [
 		{x_pos:40,width:100},
 		{x_pos:400,width:40},
-		{x_pos:1460,width:140}
+		{x_pos:1460,width:40}
 	];
 
 	// collectable
@@ -145,13 +149,17 @@ function draw()
 	};
 
 	// Draw mountains.
-    fill(165, 42, 42);
-    stroke(210,180,140);
-    strokeWeight(3);
-    triangle(mountain.x_pos, mountain.y_pos ,mountain.x_pos + mountain.width, 
-             mountain.y_pos, mountain.x_pos + mountain.width/2, mountain.y_pos - mountain.height);
-    triangle(mountain.x_pos + mountain.offset, mountain.y_pos, mountain.x_pos + mountain.offset+400 + mountain.width,
-             mountain.y_pos, mountain.x_pos + mountain.offset+200 + mountain.width/2, mountain.y_pos - mountain.height);
+	for(var i = 0; i < mountain.length; i++) {
+		fill(165, 42, 42);
+		stroke(210,180,140);
+		strokeWeight(3);
+		triangle(mountain[i].x_pos, mountain[i].y_pos ,mountain[i].x_pos + mountain[i].width, 
+				 mountain[i].y_pos, mountain[i].x_pos + mountain[i].width/2, mountain[i].y_pos - mountain[i].height);
+		triangle(mountain[i].x_pos + mountain[i].offset, mountain[i].y_pos, mountain[i].x_pos + mountain[i].offset+400 + mountain[i].width,
+				 mountain[i].y_pos, mountain[i].x_pos + mountain[i].offset+200 + mountain[i].width/2, mountain[i].y_pos - mountain[i].height);
+
+	}
+
     
 
 
