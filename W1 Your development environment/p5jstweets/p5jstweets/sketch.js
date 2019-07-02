@@ -34,7 +34,7 @@
 // s=600;function setup(){createCanvas(s,s)}function draw(){i=frameCount;translate(i%s,0);stroke(i%255,7);for(i=0;i<800;){rotate(i++);line(0, i, i, 0)}}
 
 //Lina Sarma 2015
- s=800,j=s/2;function setup(){createCanvas(s,s)}function draw(){translate(j,j);for(i=0;i<s;i++){rotate(2.95);rect(i*frameCount/30-10,i-10,i,i)}}
+//  s=800,j=s/2;function setup(){createCanvas(s,s)}function draw(){translate(j,j);for(i=0;i<s;i++){rotate(2.95);rect(i*frameCount/30-10,i-10,i,i)}}
 
 //Leon Fedden 2015
 // i=0;s=800;l=s/2;function setup(){createCanvas(s,s)}function draw(){j=sin(frameCount)*200;translate(l,l);rotate(i++%360);strokeWeight(0.1);line(j,j,0,0)}
