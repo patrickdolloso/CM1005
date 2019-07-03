@@ -6,13 +6,26 @@
 
 // Video: Nested iteration to draw grids
 
-function setup() {
-    createCanvas(600,600);
+var wordsX;
+var wordsY;
 
+function setup() {
+    createCanvas(800,800);
+    wordCloud=[];
+    wordsX=[];
+    wordsY=[];
+
+    wordCloud.push("first");
+    wordCloud.push("second");
+    wordCloud.push("first");
+    wordCloud.push("second");
+
+    currentWord="";
 }
 
 function draw() {
 
+  
     // background(0);
     // fill(255,0,255);
 
@@ -23,14 +36,7 @@ function draw() {
     //     ellipse(30 +i*30, 60 + h*30,30,30);
     // }
 
-    var gap = 10;
-for(var x = 0; x < width; x += gap){
-  for(var y = 0; y < height; y += gap){
-    ellipse(x, y, 8, 8);
-  }  
-}
 
-}
 
     // for(var i = 0; i < 10; i++){
     //     ellipse(30 +i*30,60,30,30);
@@ -38,3 +44,53 @@ for(var x = 0; x < width; x += gap){
     
     // for(var i = 0; i < 10; i++){
     //     ellipse(30 +i*30,90,30,30);
+
+
+    /*
+    // Video: Being creative with nested iteration
+    background(0);
+    fill(250,250,0);
+    noStroke();
+
+    for(var j=0; j<20; j++){
+      for(var i=0; i<20; i++){
+
+        if(i%2==0){
+          fill(255);
+        }
+        else{
+          fill(205);
+        }
+        var d = dist(mouseX, mouseY, 50+i*30,50+j*30);
+        var r = d/10;
+        ellipse(50+i*30,50+j*30,r);
+      }
+    }
+    */
+
+    background(0);
+    fill(255);
+
+    for(var i = 0; i < wordCloud.length; i++){
+
+      text(wordCloud[i], wordsX[i], wordsY[i]);
+      wordsX[i] += random(-1,1);
+      wordsY[i] += random(-1,1);
+    }
+
+}
+
+function keyPressed(){
+  console.log(keyCode);
+
+  if(keyCode == 13){
+    wordCloud.push(currentWord);
+    currentWord = "";
+    wordsX.push(random(width/4,width*3/4));
+    wordsY.push(random(height/4,height*3/4));
+  }
+  else{
+    currentWord += key;
+  }
+
+}

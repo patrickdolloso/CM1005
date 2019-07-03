@@ -9,7 +9,7 @@ function draw()
 {
 
     background(0);
-    fill(255,0,255);
+    fill(0,200,0);
     noStroke();
 
     for(var j = 0; j < 20; j ++)
