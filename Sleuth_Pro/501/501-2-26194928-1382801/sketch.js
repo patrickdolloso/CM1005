@@ -38,7 +38,9 @@ function setup() {
 function draw() {
     // add your for loop below
     for(var i = 0; i < 9; i++){
-        image(diceImg, 492 + 64*i, 335);
+        for(var j=0; j < 4; j++){
+            image(diceImg, 492 + 64*i, 330 + 75 * j);
+        };
     };
 
 }
