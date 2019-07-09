@@ -66,7 +66,7 @@ function setup()
 
   missingWords = "Edsger, Hopper’s, she has, romantic, COBOL, syndicate, delicate, capital, a donation, Governor Zuckerberg";
 
-  redactedText = "My dearest ++++++, Please don’t doubt my sincerity when I say that I hadn’t the faintest idea about ++++++++ intervention. I suspect that +++++++ a ++++++++ interest at the +++++. I and the +++++++++ appreciate your many contributions over the years. However, this is a most ++++++++ matter which would require significant +++++++ for me to deal with it satisfactorily. I would not be so crude as to suggest a sum but perhaps ++++++++++ to my forthcoming campaign would help. Yours sincerely, +++++++++++++++++++";
+  redactedText = "My dearest "+ B_Excerpt[1].Fragment_2 +", Please don’t doubt my sincerity when I say that I hadn’t the faintest idea about "+ B_Excerpt[5].Fragment_1 +" intervention. I suspect that "+ A_Excerpt[9].Fragment_2 +" a "+ A_Excerpt[6].Fragment_2 +" interest at the "+ A_Excerpt[7].Fragment_0 +". I and the "+ B_Excerpt[4].Fragment_0 +" appreciate your many contributions over the years. However, this is a most "+ B_Excerpt[9].Fragment_1 +" matter which would require significant "+ B_Excerpt[0].Fragment_2 +" for me to deal with it satisfactorily. I would not be so crude as to suggest a sum but perhaps "+ A_Excerpt[5].Fragment_1 +" to my forthcoming campaign would help. Yours sincerely, " + B_Excerpt[7].Fragment_1;
 
 }
 
