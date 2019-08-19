@@ -8,3 +8,8 @@ function setup() {
 function draw() {
 
 }
+
+function myFunction(){
+    console.log("My function has been called");
+}
+
