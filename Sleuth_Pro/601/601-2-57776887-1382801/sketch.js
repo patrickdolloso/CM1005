@@ -60,7 +60,44 @@ function setup()
 
 	//add your code below here
 
+	stroke(0,255,255)
+	beginShape()
+	for(var j=0; j < suspect_positions_x.length; j++)
+	{
+		vertex(suspect_positions_x[j], suspect_positions_y[j])
+	}
+	endShape()
 
+	fill(0,0,255)
+	for(var k=0; k < crime_positions_x.length; k++)
+	{
+		ellipse(crime_positions_x[k], crime_positions_y[k], 10, 10)
+	}
+
+    for(i = 0; i < suspect_positions_x.length; i++)
+    {
+        for(j = 0; j < crime_positions_x.length; j++)
+        {
+            var d = dist(suspect_positions_x[i],suspect_positions_y[i],crime_positions_x[j],crime_positions_y[j]);
+
+            if(d <= 62)
+            {
+                possibleMatches.push(
+                {crime: 
+                    {
+                    x: crime_positions_x[j], 
+                    y: crime_positions_y[j], 
+                    victimName: victim_names[j]
+                    },
+                    suspect: 
+                    {x: suspect_positions_x[i], 
+                     y: suspect_positions_y[i]
+                    }
+                });
+            }
+		} 
+		
+	}
 
 	// code to draw the matches ( if any)
 	for(let i = 0 ; i < possibleMatches.length ; i++)
